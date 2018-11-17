@@ -8,6 +8,7 @@ before_install:
 script:
   - docker run galal/react-test npm test -- --coverage
 
+
 after_success:
   - echo "$dockerid" | docker login -u "$dockerpass" --password-stdin
   - docker build -t galal/multi-client ./client
