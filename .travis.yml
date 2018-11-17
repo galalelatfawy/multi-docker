@@ -10,7 +10,7 @@ script:
 
 
 after_success:
-  - echo "$dockerid" | docker login -u "$dockerpass" --password-stdin
+  - echo "$DOCKERID" | docker login -u "$DOCKERPASS" --password-stdin
   - docker build -t galal/multi-client ./client
   - docker build -t galal/multi-nginx ./nginx
   - docker build -t galal/multi-server ./server
