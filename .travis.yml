@@ -8,7 +8,6 @@ before_install:
 script:
   - docker run galal/react-test npm test -- --coverage
 
-
 after_success:
   - docker build -t galal/multi-client ./client
   - docker build -t galal/multi-nginx ./nginx
