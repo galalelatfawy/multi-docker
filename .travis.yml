@@ -28,8 +28,8 @@ after_success:
 #   env: MultiDocker-env
 #   bucket_name: elasticbeanstalk-us-west-1-306476627547
 #   bucket_path: docker-multi
-  on:
-    branch: master
+  # on:
+  #   branch: master
 #   access_key_id: $AWS_ACCESS_KEY
 #   secret_access_key:
 #     secure: $AWS_SECRET_KEY
