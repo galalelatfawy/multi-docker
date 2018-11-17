@@ -15,8 +15,8 @@ after_success:
   - docker build -t galal/multi-server ./server
   - docker build -t galal/multi-worker ./worker
   # Log in to the docker CLI
-  - e echo "$DOCKERPASS" | docker login -u "$DOCKERID" --password-stdin
-  # Take those images and push them to docker hub
+  # - echo "$DOCKERPASS" | docker login -u "$DOCKERID" --password-stdin
+  - echo "$DOCKERPASS" | docker login --username "$DOCKERID" --password-stdin
   - docker push galal/multi-client
   - docker push galal/multi-nginx
   - docker push galal/multi-server
