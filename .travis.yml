@@ -15,7 +15,7 @@ after_success:
   - docker build -t galal/multi-server ./server
   - docker build -t galal/multi-worker ./worker
   # Log in to the docker CLI
-  # - echo "$DOCKERPASS" | docker login -u "$DOCKERID" --password-stdin
+  #- echo "$DOCKERPASS" | docker login -u "$DOCKERID" --password-stdin
   - echo "$DOCKERPASS" | docker login --username "$DOCKERID" --password-stdin
   - docker push galal/multi-client
   - docker push galal/multi-nginx
