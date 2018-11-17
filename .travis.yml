@@ -10,13 +10,12 @@ script:
 
 
 after_success:
-  - echo "$DOCKERPASS" | docker login -u "$DOCKERID" --password-stdin
   - docker build -t galal/multi-client ./client
   - docker build -t galal/multi-nginx ./nginx
   - docker build -t galal/multi-server ./server
   - docker build -t galal/multi-worker ./worker
   # Log in to the docker CLI
-  - echo "$dockerpass" | docker login -u "$dockerid" --password-stdin
+  - e echo "$DOCKERPASS" | docker login -u "$DOCKERID" --password-stdin
   # Take those images and push them to docker hub
   - docker push galal/multi-client
   - docker push galal/multi-nginx
